@@ -62,6 +62,21 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
                 />
                 <Chip label={`Released: ${movie.release_date}`} />
             </Paper>
+
+                         {/* Exercise 1 Topic 05 Routing movies */}
+                         {/* We have already imported this info using our tmdb.api.jsx class, I just had to figure out how to lay it out. It renders at bottom of info page */}
+            
+            <Paper component="ul" sx={{ ...root }}>
+                <li>
+                    <Chip label="Production Countries" sx={{ ...chip }} color="primary" />
+                </li>
+                {movie.production_countries?.map((country) => (
+                    <li key={country.iso_3166_1}>
+                        <Chip label={country.name} sx={{ ...chip }} />
+                    </li>
+                ))}
+            </Paper>
+
             <Fab
                 color="secondary"
                 variant="extended"
